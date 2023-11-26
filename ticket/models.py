@@ -10,7 +10,7 @@ class Ticket(models.Model):
         ('Completed', 'Completed'),
         ('Pending', 'Pending'),
     )
-    ticket_number = model.UUIDFiled(default=uuid.uuid4)
+    ticket_number = models.UUIDField(default=uuid.uuid4)
     title = models.CharField(max_length=100)
     description = models.TextField()
     created_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='created_by')
